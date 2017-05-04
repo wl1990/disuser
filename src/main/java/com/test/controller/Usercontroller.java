@@ -1,6 +1,7 @@
 package com.test.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -48,11 +49,12 @@ public class Usercontroller {
 	 * @throws NebulaException
 	 */
 	@RequestMapping(value="/user/{username}",method=RequestMethod.GET)
-	public JSONObject getUser(@PathVariable("username") String username) throws NebulaException{
+	public JSONObject getUser(@PathVariable("username") String username){
 		 JSONObject j=new JSONObject();
     	 j.put("username", username);
     	 return j;
 	}
+	
 	/**
 	 * @controllerAdvice+@ExceptionHandler 实现exception的统一处理
 	 * 缺点 只能处理controller未处理的异常，对interceptor层的异常，spring框架层的异常，tomcat容器servlet 的异常无法处理
