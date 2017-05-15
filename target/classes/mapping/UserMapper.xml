@@ -82,4 +82,5 @@
 			<if test="birthday!=null">#{birthday},</if>
 		</trim>
 	</insert>
+	
 </mapper>
