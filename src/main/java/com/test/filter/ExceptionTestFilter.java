@@ -20,7 +20,6 @@ public class ExceptionTestFilter implements Filter{
 	public void doFilter(ServletRequest arg0, ServletResponse arg1,
 			FilterChain arg2) throws IOException, ServletException {
 		float f=5/0L;
-		
 	}
 
 	@Override
