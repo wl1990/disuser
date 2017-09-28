@@ -210,6 +210,21 @@
                 </configuration>
             </plugin>
     <!-- end::plugin[] -->
+      <!-- set main method -->
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.test.main.AppMain</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+    
         </plugins>
     <finalName>disuser</finalName>
   </build>
