@@ -10,17 +10,16 @@
     </parent>
   
   <groupId>com.test.wl</groupId>
-  <artifactId>disuser</artifactId>
+  <artifactId>disuser_wr</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>disuser Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
-   <properties>
+  <properties>
   	<esapi.version>2.1.0</esapi.version>
   	<docker.image.prefix>docker</docker.image.prefix>
   </properties>
-  
   <dependencies>
    <dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -170,8 +169,36 @@
 			 <artifactId>spring-plugin-core</artifactId>
 			 <version>1.1.0.RELEASE</version>
 		</dependency>
-		
+		<!--esapi   -->
+		<dependency>
+			<groupId>org.owasp.esapi</groupId>
+			<artifactId>esapi</artifactId>
+			<version>${esapi.version}</version>
+		</dependency>
 		<!-- rest hateoas -->
+	
+	<!-- rabbit map -->
+	 <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-amqp</artifactId>
+    </dependency>
+    <!-- slf4j -->
+     <dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>1.7.10</version>
+	</dependency>
+	<dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-classic</artifactId>
+	    <version>1.1.2</version>
+	</dependency>
+	<dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-core</artifactId>
+	    <version>1.1.2</version>
+	</dependency>
+   
   </dependencies>
   <build>
   	  	 <plugins>
@@ -192,8 +219,48 @@
 					 <stripVersion>true</stripVersion>
 				</configuration>
 			</plugin>
-			  <!-- tag::plugin[] -->
+			<!-- mysql generator -->
+			<plugin>  
+                <groupId>org.mybatis.generator</groupId>  
+                <artifactId>mybatis-generator-maven-plugin</artifactId>  
+                <version>1.3.2</version>  
+                <configuration>  
+                    <configurationFile>src/main/resources/generatorConfig.xml</configurationFile>  
+                    <overwrite>true</overwrite>  
+                </configuration>  
+                <dependencies>  
+                    <dependency>  
+                        <groupId>mysql</groupId>  
+                        <artifactId>mysql-connector-java</artifactId>  
+                        <version>5.1.6</version>  
+                    </dependency>  
+                </dependencies>  
+            </plugin>  
+			<!--packet jar  -->
+			<plugin>
+            	<groupId>org.springframework.boot</groupId>
+            	<artifactId>spring-boot-maven-plugin</artifactId>
+            	<configuration>
+                    <executable>true</executable>
+                </configuration>
+            </plugin>
+            
+            <!-- set main method -->
+            
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.test.main.AppMain</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            
+             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.3</version>
@@ -209,22 +276,7 @@
                     </resources>
                 </configuration>
             </plugin>
-    <!-- end::plugin[] -->
-      <!-- set main method -->
             
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>com.test.main.AppMain</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-    
         </plugins>
     <finalName>disuser</finalName>
   </build>
