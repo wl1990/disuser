@@ -148,10 +148,10 @@
 			<artifactId>spring-boot-starter-redis</artifactId>
 		</dependency>
 
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>com.auth0</groupId>
