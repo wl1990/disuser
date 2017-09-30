@@ -52,25 +52,6 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
         </layout>
     </appender>
     
-	<!-- 消息发送日志 -->
-	 <appender name="rabbitmqLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/apps/${LOG_HOME}/rabbitmq.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/apps/${LOG_HOME}/rabbitmq.log.%d{yyyyMMdd}</fileNamePattern>
-            <MaxHistory>365</MaxHistory>
-            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>100MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
-        </rollingPolicy>
-        <layout class="ch.qos.logback.classic.PatternLayout">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [ %thread ] - [ %-5level ] [ %logger{50} : %line ] - %msg%n</pattern>
-        </layout>
-    </appender>
-    
-    <logger name="com.test.controller.RabbitMQController" level="INFO" additivity="false">
-    	<appender-ref ref="rabbitmqLog" />
-    </logger>
-
     <!-- 
     root与logger是父子关系，没有特别定义则默认为root，任何一个类只会和一个logger对应，
     要么是定义的logger，要么是root，判断的关键在于找到这个logger，然后判断这个logger的appender和level。 
