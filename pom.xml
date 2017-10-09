@@ -86,30 +86,7 @@
 			<version>1.2.17</version>
 		</dependency>
 
-		<!-- dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-log4j12</artifactId> 
-			<version>1.7.12</version> </dependency -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>3.3.0</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis-spring</artifactId>
-			<version>1.2.2</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.6</version>
-		</dependency>
+	
 		
 		<!-- html swagger -->
 		<dependency>
@@ -147,29 +124,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-redis</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.auth0</groupId>
-			<artifactId>java-jwt</artifactId>
-			<version>3.0.1</version>
-		</dependency>
-		
-		<dependency>
-				<groupId>com.github.pagehelper</groupId>
-				<artifactId>pagehelper</artifactId>
-				<version>4.0.0</version>
-			</dependency>
-		<!-- mybatis-generator-core核心jar包 -->  
-		<dependency>  
-		    <groupId>org.mybatis.generator</groupId>  
-		    <artifactId>mybatis-generator-core</artifactId>  
-		    <version>1.3.2</version>  
-		</dependency>  
 		
 		<!-- rest hateoas -->
 		<dependency>
@@ -190,12 +144,6 @@
 			<version>${esapi.version}</version>
 		</dependency>
 		<!-- rest hateoas -->
-	
-	<!-- rabbit map -->
-	 <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-amqp</artifactId>
-    </dependency>
     <!-- slf4j -->
      <dependency>
 	    <groupId>org.slf4j</groupId>
@@ -233,24 +181,7 @@
 					 <stripVersion>true</stripVersion>
 				</configuration>
 			</plugin>
-			<!-- mysql generator -->
-			<plugin>  
-                <groupId>org.mybatis.generator</groupId>  
-                <artifactId>mybatis-generator-maven-plugin</artifactId>  
-                <version>1.3.2</version>  
-                <configuration>  
-                    <configurationFile>src/main/resources/generatorConfig.xml</configurationFile>  
-                    <overwrite>true</overwrite>  
-                </configuration>  
-                <dependencies>  
-                    <dependency>  
-                        <groupId>mysql</groupId>  
-                        <artifactId>mysql-connector-java</artifactId>  
-                        <version>5.1.6</version>  
-                    </dependency>  
-                </dependencies>  
-            </plugin>  
-			<!--packet jar  -->
+ 
 			<plugin>
             	<groupId>org.springframework.boot</groupId>
             	<artifactId>spring-boot-maven-plugin</artifactId>
