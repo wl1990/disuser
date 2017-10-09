@@ -19,7 +19,7 @@
   <properties>
   	<esapi.version>2.1.0</esapi.version>
   	<docker.image.prefix>docker</docker.image.prefix>
-  	<jdk.version>1.9</jdk.version>
+  	<jdk.version>1.8</jdk.version>
   </properties>
   
   <dependencies>
