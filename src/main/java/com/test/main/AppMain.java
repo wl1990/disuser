@@ -4,6 +4,9 @@ package com.test.main;
 
 
 
+
+import javax.validation.ValidationException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -19,6 +22,7 @@ public class AppMain {
 	public static void main(String[] args) {
 		try{
 			log.info("-------start disuser------");
+			ValidationException e;
 		SpringApplication.run(AppMain.class, args);
 		}catch(Exception e){
 			log.error("--disuser-"+e);
