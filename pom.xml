@@ -12,7 +12,7 @@
   <groupId>com.test.wl</groupId>
   <artifactId>disuser</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>disuser Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
@@ -175,7 +175,7 @@
         <dependency>
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
-            <version>3.3.3</version>
+            <version>3.3.6</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.sun.jmx</groupId>
