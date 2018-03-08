@@ -7,8 +7,11 @@
     			http://code.alibabatech.com/schema/dubbo 
     			http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
 	default-autowire="byName">
-	<dubbo:application name="dubbodemo-provider"/>
+<!-- 	<dubbo:application name="dubbodemo-provider"/>
+	<dubbo:provider delay="-1" timeout="6000" retries="0"/>
 	<dubbo:registry id="dubbodemo" address="zookeeper://127.0.0.1:2181"/>
-	<dubbo:protocol name="dubbo" port="28080"/>
-	<dubbo:service registry="dubbodemo" timeout="3000" interface="com.test.service.DubboTest" ref="dubboTest"/>
+	<dubbo:protocol name="dubbo" port="28080" threads="200"/>
+	<dubbo:service registry="dubbodemo" timeout="3000" interface="com.test.service.DubboTest" ref="dubboTest" executes="200" retry="2" loadbalance="random" >
+		<dubbo:method name="dubbotest" executes="50"/>
+	</dubbo:service> -->
 </beans>

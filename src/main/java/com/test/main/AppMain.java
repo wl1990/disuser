@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ImportResource;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@ImportResource("classpath:dubbo/spring-provider-dubbo.xml")
+//@ImportResource("classpath:dubbo/spring-provider-dubbo.xml")
 @SpringBootApplication(scanBasePackages={ "com.test.controller","com.test.service"})
 @EnableSwagger2
 public class AppMain {
