@@ -7,7 +7,7 @@ eureka:
      serviceUrl:
       defaultZone: http://localhost:8086/eureka/
    instance:
-     hostname:backup
+     hostname: backup
 spring: 
    application:
      name: eureka-server
