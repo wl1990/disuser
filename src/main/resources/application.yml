@@ -1,13 +1,13 @@
 server:
-   port: 8085
+   port: 8086
 eureka:
    client:
      registerWithEureka: false
      fetchRegistry: false
      serviceUrl:
-      defaultZone: http://localhost:8085/eureka/
+      defaultZone: http://localhost:8086/eureka/
    instance:
-     hostname:master
+     hostname:backup
 spring: 
    application:
      name: eureka-server
