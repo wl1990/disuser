@@ -6,3 +6,8 @@ eureka:
      fetchRegistry: false
      serviceUrl:
       defaultZone: http://localhost:8085/eureka/
+   instance:
+     hostname: master
+spring:
+   application:
+     name: eureka-server
