@@ -15,7 +15,7 @@ public class SsController {
 	@RequestMapping(value="/info",method=RequestMethod.GET)
 	public String info(){
 		ServiceInstance instance=client.getLocalServiceInstance();
-		String info="host:"+instance.getHost()+"service_id:"+instance.getServiceId();
+		String info="host:"+instance.getHost()+" service_id:"+instance.getServiceId()+" port:"+instance.getPort();
 		return info;
 	}
 }

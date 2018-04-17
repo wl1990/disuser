@@ -8,7 +8,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 public class ServiceApplication {
 	public static void main(String[] args) {
-		
 		new SpringApplicationBuilder(ServiceApplication.class).web(true).run(args);
 	}
 }
